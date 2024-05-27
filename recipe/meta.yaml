@@ -1,5 +1,5 @@
 {% set name = "flask-postgres" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.5" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flask_postgres-{{ version }}.tar.gz
-  sha256: 99473e2bc22ce8a96004af268c98526e1902539a4b5186dc7274847c2bc0adea
+  sha256: bbf0f2c6689913bf3f806693d1807b736813d3637e3b0b014dc3e71c7a67726a
 
 build:
   number: 0
