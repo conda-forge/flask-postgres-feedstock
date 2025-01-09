@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flask_postgres-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flask_postgres-{{ version }}.tar.gz
   sha256: bbf0f2c6689913bf3f806693d1807b736813d3637e3b0b014dc3e71c7a67726a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -21,12 +21,12 @@ requirements:
   host:
     - flit
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - click >=7.0
     - flask >=1.0
     - flask-sqlalchemy >=2.4
-    - python >=3.6
+    - python >={{ python_min }}
     - sqlalchemy >=1.2.2
 
 test:
@@ -37,6 +37,7 @@ test:
     - flask psql --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dwreeves/flask-postgres
